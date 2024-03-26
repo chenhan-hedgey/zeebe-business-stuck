@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="clothingChoice" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.17.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.3.0">
+  <decision id="Decision_0gkazdw" name="Clothes to wear">
+    <informationRequirement id="InformationRequirement_1n0k58f">
+      <requiredInput href="#InputData_172h620" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0zjfaz6">
+      <requiredInput href="#InputData_1ov2vlq" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_1cjjwzh">
+      <input id="Input_1">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text>Temperature</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_05ghqb1">
+          <text>"hot","cold"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_12efet6">
+        <inputExpression id="LiteralExpression_0k6ifm6" typeRef="string">
+          <text>Activity</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_1hapknh">
+          <text>"inside","outside"</text>
+        </inputValues>
+      </input>
+      <output id="Output_1" name="clothingChoice" typeRef="string">
+        <outputValues id="UnaryTests_013f6vz">
+          <text>"shorts","pants"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_08wfj4o">
+        <inputEntry id="UnaryTests_05dsutg">
+          <text>"hot"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lpmkyg">
+          <text>"outside"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ra6elg">
+          <text>"shorts"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1vnemoj">
+        <inputEntry id="UnaryTests_0p96jpi">
+          <text>"hot"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06xz7us">
+          <text>"inside"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0u0npzi">
+          <text>"pants"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_00fej6g">
+        <inputEntry id="UnaryTests_04jy5iq">
+          <text>"cold"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_021qusy">
+          <text>"outside"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1818f44">
+          <text>"shorts"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_06mw4gi">
+        <inputEntry id="UnaryTests_0hl453j">
+          <text>"cold"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bxv83f">
+          <text>"inside"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1a2yrj7">
+          <text>"pants"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_172h620" name="Temperature" />
+  <inputData id="InputData_1ov2vlq" name="Activity" />
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Decision_0gkazdw">
+        <dc:Bounds height="80" width="180" x="330" y="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1ateike" dmnElementRef="InputData_172h620">
+        <dc:Bounds height="45" width="125" x="157" y="328" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0xums7t" dmnElementRef="InputData_1ov2vlq">
+        <dc:Bounds height="45" width="125" x="547" y="328" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1aqplym" dmnElementRef="InformationRequirement_1n0k58f">
+        <di:waypoint x="220" y="328" />
+        <di:waypoint x="390" y="180" />
+        <di:waypoint x="390" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0aecl9k" dmnElementRef="InformationRequirement_0zjfaz6">
+        <di:waypoint x="610" y="328" />
+        <di:waypoint x="450" y="180" />
+        <di:waypoint x="450" y="160" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
